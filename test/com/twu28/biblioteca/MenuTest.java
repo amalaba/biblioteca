@@ -19,13 +19,33 @@ public class MenuTest {
     }
 
     @Test
-    public void showMenuTest(){
+    public void showMenuTest(){                       //requirement 2
            Menu menu= new Menu(1,"Display Books");
           // Menu reserve=new Menu(2,"Reserve Books");
-            Boolean choice=menu.showMenu(1);
-            Assert.assertEquals((Object) true,choice);
+            String display=menu.showMenu();
+            Assert.assertEquals(menu.disp,display);
 
     }
+
+        @Test
+        public void pickMenuTest(){                     //requirement 3 and 4
+            Menu menu=new Menu(1,"Display");
+            String message=menu.pickMenu(1);
+            Assert.assertSame("Success",message);
+            String message1=menu.pickMenu(2);
+            Assert.assertSame("Success",message1);
+            String message2=menu.pickMenu(5);
+            Assert.assertSame("Select a valid option",message2);
+        }
+    /*public void pickMenuTest(){
+             Menu menu=new Menu(1,"display");
+             Boolean displayresult = menu.pickMenu(1);
+            Assert.assertEquals((Object) true,displayresult);
+            Boolean reserveresult = menu.pickMenu(2);
+            Assert.assertEquals((Object) true,reserveresult);
+            Boolean checkresult = menu.pickMenu(3);
+            Assert.assertEquals((Object) true,checkresult);
+    } */
 
 
 }

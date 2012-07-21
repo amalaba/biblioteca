@@ -7,14 +7,12 @@ import org.junit.Test;
  * Created with IntelliJ IDEA.
  * User: Admin
  * Date: 21/7/12
- * Time: 1:39 AM
+ * Time: 11:19 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ApplicationTest {
-      @Test
-    public void showWelcomeTest(){                            //requirement 1
-          Assert.assertEquals("Welcome..",new Application().showWelcome());
+public class CheckTest {
+    @Test
+    public void CheckLibNoTest(){                           //requirement 8
+        Assert.assertEquals("Please contact the librarian",new Check().checkLibNo(123));
     }
-
-
 }
