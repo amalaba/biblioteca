@@ -12,17 +12,17 @@ import org.junit.Test;
  */
 public class BookTest{
     @Test
-    public void showBooksTest(){                       //requirement 5
-        Book book= new Book();
-        // Menu reserve=new Menu(2,"Reserve Books");
-        String display=book.showBooks();
-        Assert.assertEquals(book.disp, display);
+    public void showDisplayBooks(){                       //requirement 5
+        Book far_from_madding_crowd = new Book("far from the madding crowd", "Thomas Hardy");
+        Book deception_point = new Book("deception point", "Dan Brown");
+        Assert.assertEquals("far from the madding crowd"+":"+"Thomas Hardy",far_from_madding_crowd.showBooks(far_from_madding_crowd));
+        Assert.assertEquals("deception point"+":"+"Dan Brown",deception_point.showBooks(deception_point));
 
     }
     @Test
     public void shouldReserveABook()               //requirement      6
     {
-        Book book = new Book();
+        Book book = new Book("Far from the madding crowd","Thomas hardy");
         //   String author = "Author";
         //  String name="name";
         Assert.assertEquals(true,book.reserve());
@@ -31,7 +31,7 @@ public class BookTest{
     @Test
     public void shouldNotReserveABookIfAlreadyReserved()                        //requirement 7
     {
-        Book book = new Book();
+        Book book = new Book("Far from the madding crowd","Thomas Hardy");
         //   String author = "Author";
         //  String name="name";
         Assert.assertEquals(true,book.reserve());

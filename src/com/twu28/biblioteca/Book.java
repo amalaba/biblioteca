@@ -1,5 +1,7 @@
 package com.twu28.biblioteca;
 
+import java.util.ArrayList;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Admin
@@ -8,23 +10,25 @@ package com.twu28.biblioteca;
  * To change this template use File | Settings | File Templates.
  */
 public class Book {
-    public String disp;
+    String name;
+    String author;
     private boolean bookreserved=false;
 
-    public String showBooks() {
-        Book book = new Book();
+      public Book(String name,String author){
+          this.name=name;
+          this.author=author;
+      }
+
+
+   /* public String showBooks() {
+        Book book = new Book();                                //return disp
         return book.disp;
         // Book book = new Book();
         // book.showBooks();
         //return true;  //To change body of created methods use File | Settings | File Templates.
     }
+        */                                                                      //no setter
 
-    public void setDisp(String disp) {
-        disp="1.Far From the madding crowd: Thomas Hardy" +
-                "2.Not a penny more Not a penny Less: Jeffrey Archer" +
-                "3. The Ring : Danielle Steel";
-
-    }
     public boolean reserve() {
         if(bookreserved==false)
         {   bookreserved=true;
@@ -32,5 +36,12 @@ public class Book {
         }
         else
             return false;
+    }
+
+    public String showBooks(Book book) {
+        String whole_book_detail;
+        whole_book_detail=book.name+":"+book.author;
+        return whole_book_detail;  //To change body of created methods use File | Settings | File Templates.
+
     }
 }

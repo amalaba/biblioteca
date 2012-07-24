@@ -4,6 +4,8 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 import java.awt.print.Book;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,39 +15,17 @@ import java.awt.print.Book;
  * To change this template use File | Settings | File Templates.
  */
 public class MenuTest {
-    @Test
+   /* @Test
     public void showMenuNameTest(){
         Assert.assertEquals("Menu",new Menu(1,"display").showMenuName());
     }
-
+*/
     @Test
-    public void showMenuTest(){                       //requirement 2
-           Menu menu= new Menu(1,"Display Books");
-          // Menu reserve=new Menu(2,"Reserve Books");
-            String display=menu.showMenu();
-            Assert.assertEquals(menu.disp,display);
-
-    }
-
-        @Test
-        public void pickMenuTest(){                     //requirement 3 and 4
-            Menu menu=new Menu(1,"Display");
-            String message=menu.pickMenu(1);
-            Assert.assertSame("Success",message);
-            String message1=menu.pickMenu(2);
-            Assert.assertSame("Success",message1);
-            String message2=menu.pickMenu(5);
-            Assert.assertSame("Select a valid option",message2);
-        }
-    /*public void pickMenuTest(){
-             Menu menu=new Menu(1,"display");
-             Boolean displayresult = menu.pickMenu(1);
-            Assert.assertEquals((Object) true,displayresult);
-            Boolean reserveresult = menu.pickMenu(2);
-            Assert.assertEquals((Object) true,reserveresult);
-            Boolean checkresult = menu.pickMenu(3);
-            Assert.assertEquals((Object) true,checkresult);
-    } */
-
+    public void shouldShowMenu(){
+            Menu show_book = new Menu(1, "show Books");
+            Menu reserve_book = new Menu(2, "reserve");
+            Assert.assertEquals("show Books",show_book.showMenu(show_book));
+            Assert.assertEquals("reserve",reserve_book.showMenu(reserve_book));
+            }
 
 }
