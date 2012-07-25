@@ -16,5 +16,8 @@ public class ApplicationTest {
           Assert.assertEquals("Welcome..",new Application().showWelcome());
     }
 
-
+    @Test
+    public void CheckLibNoTest(){                           //requirement 8
+        Assert.assertEquals("Please contact the librarian",new Application().checkLibNo(123));
+    }
 }

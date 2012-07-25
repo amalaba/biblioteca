@@ -29,9 +29,9 @@ public class Book {
     }
         */                                                                      //no setter
 
-    public boolean reserve() {
-        if(bookreserved==false)
-        {   bookreserved=true;
+    public boolean reserve(Book book_to_reserve) {
+        if(book_to_reserve.bookreserved==false)
+        {  book_to_reserve.bookreserved=true;
             return true;  //To change body of created methods use File | Settings | File Templates.
         }
         else
@@ -44,4 +44,5 @@ public class Book {
         return whole_book_detail;  //To change body of created methods use File | Settings | File Templates.
 
     }
+
 }

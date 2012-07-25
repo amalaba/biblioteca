@@ -25,7 +25,7 @@ public class BookTest{
         Book book = new Book("Far from the madding crowd","Thomas hardy");
         //   String author = "Author";
         //  String name="name";
-        Assert.assertEquals(true,book.reserve());
+        Assert.assertEquals(true,book.reserve(book));
     };
 
     @Test
@@ -34,7 +34,7 @@ public class BookTest{
         Book book = new Book("Far from the madding crowd","Thomas Hardy");
         //   String author = "Author";
         //  String name="name";
-        Assert.assertEquals(true,book.reserve());
-        Assert.assertEquals(false,book.reserve());
+        Assert.assertEquals(true,book.reserve(book));
+        Assert.assertEquals(false,book.reserve(book));
     };
 }
