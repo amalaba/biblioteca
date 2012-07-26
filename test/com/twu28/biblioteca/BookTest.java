@@ -3,38 +3,27 @@ package com.twu28.biblioteca;
 import junit.framework.Assert;
 import org.junit.Test;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Admin
- * Date: 21/7/12
- * Time: 10:59 PM
- * To change this template use File | Settings | File Templates.
- */
 public class BookTest{
     @Test
-    public void showDisplayBooks(){                       //requirement 5
+    public void showDisplayBooks(){
         Book far_from_madding_crowd = new Book("far from the madding crowd", "Thomas Hardy");
         Book deception_point = new Book("deception point", "Dan Brown");
-        Assert.assertEquals("far from the madding crowd"+":"+"Thomas Hardy",far_from_madding_crowd.showBooks(far_from_madding_crowd));
-        Assert.assertEquals("deception point"+":"+"Dan Brown",deception_point.showBooks(deception_point));
+        Assert.assertEquals("far from the madding crowd"+":"+"Thomas Hardy",far_from_madding_crowd.showBooks());
+        Assert.assertEquals("deception point"+":"+"Dan Brown",deception_point.showBooks());
 
     }
     @Test
-    public void shouldReserveABook()               //requirement      6
+    public void shouldReserveABook()
     {
         Book book = new Book("Far from the madding crowd","Thomas hardy");
-        //   String author = "Author";
-        //  String name="name";
-        Assert.assertEquals(true,book.reserve(book));
+         Assert.assertEquals(true,book.reserve());
     };
 
     @Test
-    public void shouldNotReserveABookIfAlreadyReserved()                        //requirement 7
+    public void shouldNotReserveABookIfAlreadyReserved()
     {
         Book book = new Book("Far from the madding crowd","Thomas Hardy");
-        //   String author = "Author";
-        //  String name="name";
-        Assert.assertEquals(true,book.reserve(book));
-        Assert.assertEquals(false,book.reserve(book));
+        Assert.assertEquals(true,book.reserve());
+        Assert.assertEquals(false,book.reserve());
     };
 }
