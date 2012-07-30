@@ -13,10 +13,6 @@ public class Application {
     }
 
 
-    public String checkLibNo(int libno) {
-        return "Please contact the librarian";
-    }
-
     public Book getBookName(ArrayList<Book> books, String book_name) {
         for (Book book : books) {
             if (book.name.equals(book_name)) {
@@ -29,18 +25,16 @@ public class Application {
     public static void main(String args[]) {
         Application application = new Application();
         System.out.println(application.showWelcome());
+        LoginFactory loginFactory= new LoginFactory();
+        ArrayList<Login> logins=new ArrayList<Login>();
+        loginFactory.createLoginDetails();
         BookFactory bookFactory = new BookFactory();
         MovieFactory movieFactory = new MovieFactory();
         ArrayList<Movie> movies = movieFactory.createMovieDetails();
         ArrayList<Book> books = bookFactory.createBooks();
-        MenuFactory menuFactory = new MenuFactory();
-        ArrayList<Menu> menu = menuFactory.createMenu();
-        System.out.println("MENU");
-        for (Menu menu_item : menu) {
-            System.out.println(menu_item.showMenu(menu_item));
-        }
-        MenuAction menuAction = new MenuAction(books, movies);
+        MenuAction menuAction = new MenuAction(books, movies,logins);
+        menuAction.doLoginFunction();
         menuAction.doMenuFunction();
 
-    }
+        }
 }

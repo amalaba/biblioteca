@@ -12,11 +12,11 @@ import org.junit.Test;
  */
 public class MovieTest {
     @Test
-    public void shouldDisplayMovieDetails(){
-        Movie theShawshankRedemption  = new Movie("The Shawshank Redemption","gfgdfg",9.2);
-        Movie theGodfather  = new Movie("The Godfather","gfgdfg",9.0);
-        Assert.assertEquals("The Shawshank Redemption" + " " + "gfgdfg"+" "+ 9.2,theShawshankRedemption.showMovieDetails());
-        Assert.assertEquals("The Godfather" + " "+"gfgdfg"+" "+9.0,theGodfather.showMovieDetails());
+    public void shouldDisplayMovieDetails() {
+        Movie theShawshankRedemption = new Movie("The Shawshank Redemption", "gfgdfg", 9.2);
+        Movie theGodfather = new Movie("The Godfather", "gfgdfg", 9.0);
+        Assert.assertEquals("The Shawshank Redemption" + " " + "gfgdfg" + " " + 9.2, theShawshankRedemption.showMovieDetails());
+        Assert.assertEquals("The Godfather" + " " + "gfgdfg" + " " + 9.0, theGodfather.showMovieDetails());
 
     }
 }
